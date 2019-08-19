@@ -10,7 +10,7 @@
 		<form action="/submit" method="POST">
 			 <select name="project">
 				{%for name in names%}
-				<option>{name}</option>
+				<option>{{name[0]}}</option>
 				{%endfor%}
 			</select>
 			<br /><br />
