@@ -19,10 +19,13 @@ def bye():
     name = f["project"]
     
     #TODO - Insert SQL Select query to fetch name, assignedTo and status
-    
-    database_name = ""
-    database_assignedto = ""
-    database_status = ""
+    conn = sql.connect('database.db')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM project WHERE name=?",(name,))
+    d=cur.fetchall()
+    database_name = d[0]
+    database_assignedto = d[1]
+    database_status = d[2]
     
     return render_template("submit.html", formT={"name": database_name, "assignedTo": database_assignedto, "status": database_status})
 
