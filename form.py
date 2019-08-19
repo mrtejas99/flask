@@ -22,7 +22,7 @@ def bye():
     conn = sql.connect('database.db')
     cur = conn.cursor()
     cur.execute("SELECT * FROM project WHERE name=?",(name,))
-    d=cur.fetchall()
+    d=cur.fetchall()[0]
     database_name = d[0]
     database_assignedto = d[1]
     database_status = d[2]
