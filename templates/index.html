@@ -1,20 +1,29 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Status</title>
+	  <title>Status</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
+	<div class="container">
 		<h2>View the status of the project.</h2>
-		<h4>Select the project from dropdown list:</h4>
+		<p>Select the project from dropdown list:</p>
 		<form action="/submit" method="POST">
-			 <select name="project">
-				{%for name in names%}
-				<option>{{name[0]}}</option>
-				{%endfor%}
-			</select>
+			<div class="form-group">
+			<label for="sel1">Select list (select one):</label>
+				<select class="form-control" id="sel1" name="project">
+					{%for name in names%}
+					<option>{{name[0]}}</option>
+					{%endfor%}
+				</select>
 			<br /><br />
-			<input type="submit" value="Check status">
+			<input type="submit" value="Check status" class="btn btn-info">
 		</form>
+	</div>
 	</body>
 </html>

@@ -1,12 +1,45 @@
-<!doctype html>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Status</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	  <style>
+		a {color:#ffffff;}
+		a:visited {color:#ffffff;}
+		a:hover {color:#ffffff;}
+		a:active {color:#ffffff;}
+		
+		
+	  </style>
+	</head>
 	
 	<body>
-		<h2>View the status of the project.</h2>
-		<span>Name: {{formT['name']}} </span><br />
-		<span>Assigned to: {{formT['assignedTo']}}</span><br />
-		<span>Status {{formT['status']}}</span><br />
-		<a href="http://127.0.0.1:5000/">Go back</a>
+		<div class="container">
+			<h2>View the status of the project.</h2>
+			<br />
+			
+			  <table class="table table-hover table-bordered">
+				<tbody>
+				  <tr>
+					<th>Name </th>
+					<td>{{formT['name']}}</td>
+				  </tr>
+				  <tr>
+					<th>Assigned to </th>
+					<td>{{formT['assignedTo']}}</td>
+				  </tr>
+				  <tr>
+					<th>Status</th>
+					<td>{{formT['status']}}</td>
+				  </tr>
+				</tbody>
+			  </table>
+			<br /><br />
+			<button type="button" class="btn btn-success"><a style= "text-decoration:none" href="http://127.0.0.1:5000/">Go back</a></button>
+		</div>
 	</body>
 </html>
